@@ -1,7 +1,17 @@
+import { useState, useEffect } from 'react';
+import { Navbar, Products } from './components';
+import { commerce } from './libs/commerce';
+
 function App() {
+  const [products, setProducts] = useState([]);
+
+  const fetchedProducts = async () => {
+    const { data } = await commerce.products.list();
+  }
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <Navbar></Navbar>
+      <Products></Products>
     </div>
   );
 }
