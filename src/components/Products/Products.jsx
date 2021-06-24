@@ -4,6 +4,7 @@ import Product from './Product/Product.jsx'
 import useStyles from './styles'
 
 const Products = ({ products, onAddToCart }) => {
+
     const classes = useStyles();
     if (products.length === 0) return <p>Loading...</p>;
     return (
